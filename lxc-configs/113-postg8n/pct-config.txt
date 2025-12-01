@@ -1,14 +1,13 @@
 arch: amd64
 cores: 2
-description: <div align='center'>%0A  <a href='https%3A//Helper-Scripts.com' target='_blank' rel='noopener noreferrer'>%0A    <img src='https%3A//raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/images/logo-81x112.png' alt='Logo' style='width%3A81px;height%3A112px;'/>%0A  </a>%0A%0A  <h2 style='font-size%3A 24px; margin%3A 20px 0;'>PostgreSQL LXC</h2>%0A%0A  <p style='margin%3A 16px 0;'>%0A    <a href='https%3A//ko-fi.com/community_scripts' target='_blank' rel='noopener noreferrer'>%0A      <img src='https%3A//img.shields.io/badge/&#x2615;-Buy us a coffee-blue' alt='spend Coffee' />%0A    </a>%0A  </p>%0A%0A  <span style='margin%3A 0 10px;'>%0A    <i class="fa fa-github fa-fw" style="color%3A #f5f5f5;"></i>%0A    <a href='https%3A//github.com/community-scripts/ProxmoxVE' target='_blank' rel='noopener noreferrer' style='text-decoration%3A none; color%3A #00617f;'>GitHub</a>%0A  </span>%0A  <span style='margin%3A 0 10px;'>%0A    <i class="fa fa-comments fa-fw" style="color%3A #f5f5f5;"></i>%0A    <a href='https%3A//github.com/community-scripts/ProxmoxVE/discussions' target='_blank' rel='noopener noreferrer' style='text-decoration%3A none; color%3A #00617f;'>Discussions</a>%0A  </span>%0A  <span style='margin%3A 0 10px;'>%0A    <i class="fa fa-exclamation-circle fa-fw" style="color%3A #f5f5f5;"></i>%0A    <a href='https%3A//github.com/community-scripts/ProxmoxVE/issues' target='_blank' rel='noopener noreferrer' style='text-decoration%3A none; color%3A #00617f;'>Issues</a>%0A  </span>%0A</div>%0A%0A%0Acode permision%0A%0Acurl "https%3A//binaries.twingate.com/connector/setup.sh" | sudo TWINGATE_ACCESS_TOKEN="eyJhbGciOiJFUzI1NiIsImtpZCI6Ikc2NzVuVjVELXFuQ0hhakpCelhRS0ZhLVZVNVgyUjRHMDQ2YkM3SVJIeUUiLCJ0eXAiOiJEQVQifQ.eyJhdWRzIjpudWxsLCJudCI6IkFOIiwiYWlkIjoiNjQ5NTgwIiwiZGlkIjoiMjY4NDA0OSIsInJudyI6MTc2MjY0NjE5MCwianRpIjoiMWJmYzZjZDktMzM2Mi00YzA1LWI0NTktNDIwZThlNWZjMzQ1IiwiaXNzIjoidHdpbmdhdGUiLCJhdWQiOiJzdnJzZWoiLCJleHAiOjE3NjI2NDk1MDMsImlhdCI6MTc2MjY0NTkwMywidmVyIjoiNCIsInRpZCI6IjE4ODI4MyIsInJuZXRpZCI6IjI0OTA1NSJ9.6RdioCImJRVdH5zFYodCSkAfj05jijBKN35HLQBtp8wq30ryY_1RSlVci4b7ppXEsGjoqeR_asXi1y4qc8GnKQ" TWINGATE_REFRESH_TOKEN="18Xc4F7B6-ogenRsH1wlpdQXziAefb9k_vNw1NR5Q_90MslOSSmtJVPNOPGuLc0XeTiH5BqEvwuXQbuT7qKa-n8iuQueX-dL1O1tRAdp_QjDx-ajZec33Sn25TjKIALwYnr6eQ" TWINGATE_NETWORK="svrsej" TWINGATE_LABEL_DEPLOYED_BY="linux" bash%0A
 features: nesting=1,fuse=1
 hostname: postg8n
 memory: 3082
 nameserver: 8.8.8.8
-net0: name=eth0,bridge=vmbr1,gw=192.168.100.10,hwaddr=BC:24:11:2F:91:A9,ip=192.168.100.112/24,type=veth
+net0: name=eth0,bridge=vmbr1,gw=192.168.100.10,hwaddr=xx:74:xx:S2:xx:xx,ip=192.168.xx.xx/xx,type=veth
 onboot: 1
 ostype: debian
-rootfs: lab-storage:113/vm-113-disk-0.raw,size=20G
+rootfs: lab-storage:113/vm-113-disk-0.raw,size=xxG
 swap: 512
 tags: datba;snep
 lxc.cgroup2.devices.allow: a

@@ -11,7 +11,7 @@ Configuraciones y scripts para homelab, campuslab y businesslabs basado en Proxm
 
 Todo el setup se puede levantar desde cero en otro nodo Proxmox con un solo `git clone` + `ansible-playbook` (próximamente).
 
-## Servicios actuales (2025-12-01)
+## Servicios
 
 | Tipo | ID   | Nombre           | Uso principal                                  | Puerto externo |
 |------|------|------------------|------------------------------------------------|----------------|

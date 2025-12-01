@@ -5,9 +5,9 @@ features: keyctl=1,nesting=1
 hostname: Ubun24
 memory: 4098
 nameserver: 8.8.8.8 1.1.1.1
-net0: name=eth0,bridge=vmbr1,gw=192.168.100.10,hwaddr=4e:33:a4:fc:42:24,ip=192.168.100.11/24,type=veth
+net0: name=eth0,bridge=vmbr1,gw=192.168.x.x,hwaddr=xx:85:xx:xx:xx:xx,ip=192.168.xx.xx/xx,type=veth
 ostype: ubuntu
-rootfs: lab-storage:110/vm-110-disk-0.raw,size=37G
+rootfs: lab-storage:110/vm-110-disk-0.raw,size=xxxG
 swap: 2048
 unprivileged: 0
 lxc.apparmor.profile: unconfined

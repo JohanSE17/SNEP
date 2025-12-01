@@ -1,7 +1,7 @@
 #!/bin/bash
-
-DOMAIN="svrsej.duckdns.org"
-TOKEN="9b3ac1b0-3aa3-4d73-bc81-fd4c89c2b383"
+# Colocas el dominio
+DOMAIN="duckdns.org"
+TOKEN="9byguh...hjvf5h..."
 TXT_VALUE="$CERTBOT_VALIDATION"
 
 # Actualiza el TXT record en DuckDNS

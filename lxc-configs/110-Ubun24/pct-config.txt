@@ -1,6 +1,5 @@
 arch: amd64
 cores: 2
-description:  Permitir WireGuard y Tailscale%0Alxc.network.type%3A veth%0Alxc.network.link%3A vmbr1%0Alxc.network.flags%3A up%0A
 features: keyctl=1,nesting=1
 hostname: Ubun24
 memory: 4098

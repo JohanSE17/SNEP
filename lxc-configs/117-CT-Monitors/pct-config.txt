@@ -3,9 +3,9 @@ cores: 2
 features: keyctl=1,nesting=1
 hostname: CT-Monitors
 memory: 2054
-net0: name=eth0,bridge=vmbr1,gw=192.168.100.10,hwaddr=BC:24:11:0D:DD:C5,ip=192.168.100.15/24,ip6=dhcp,type=veth
+net0: name=eth0,bridge=vmbr1,gw=192.xx.xx.xx,hwaddr=xx:xx:91:xx:XS:xx,ip=192.xx.xx.xx/xx,ip6=dhcp,type=veth
 ostype: debian
-rootfs: local-backups:117/vm-117-disk-0.raw,size=11G
+rootfs: local-backups:117/vm-117-disk-0.raw,size=xxG
 swap: 512
 tags: auditor
 unprivileged: 1

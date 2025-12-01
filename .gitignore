@@ -1,0 +1,13 @@
+# Sensibles
+.env
+*.key
+*.pem
+id_*
+*.ovpn
+# Discos y backups grandes
+*.qcow2
+*.raw
+*.vzdump*
+# Logs
+*.log
+nohup.out

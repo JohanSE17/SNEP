@@ -1,0 +1,51 @@
+/* Fondo negro + partículas animadas (CSS puro, ligero) */
+html, body, #root, .app, .login-screen {
+    background: #000 !important;
+    margin: 0; padding: 0; height: 100%; overflow: hidden;
+}
+body::before {
+    content: ''; position: fixed; inset: 0;
+    background: radial-gradient(circle at 20% 80%, rgba(0,255,255,0.15) 0%, transparent 30%),
+                radial-gradient(circle at 80% 20%, rgba(255,0,255,0.15) 0%, transparent 30%);
+    animation: glow 10s ease-in-out infinite alternate;
+    pointer-events: none; z-index: 1;
+}
+@keyframes glow { from { opacity: 0.6; } to { opacity: 1; } }
+
+/* Login box con borde neón */
+.login-dialog {
+    background: linear-gradient(145deg, #0a0a0a, #000) !important;
+    border: 2px solid #00ffff !important; border-radius: 20px !important;
+    box-shadow: 0 0 60px rgba(0,255,255,0.8) !important;
+    position: relative; overflow: hidden;
+}
+.login-dialog::after {
+    content: ''; position: absolute; inset: -4px;
+    background: linear-gradient(45deg, #00ffff, #ff00ff, #00ffff); background-size: 400%;
+    z-index: -1; border-radius: 24px; animation: neon 6s linear infinite; filter: blur(12px);
+}
+@keyframes neon { 0% { background-position: 0%; } 100% { background-position: 400%; } }
+
+/* Inputs y botón neón */
+input[type=text], input[type=password] {
+    background: rgba(0,0,0,0.7) !important; border: 2px solid #00ffff !important;
+    color: #00ffff !important; border-radius: 12px !important; padding: 14px !important;
+    font-family: 'Courier New', monospace;
+}
+input[type=submit] {
+    background: transparent !important; color: #00ffff !important; border: 2px solid #00ffff !important;
+    padding: 14px 50px !important; border-radius: 50px !important; font-weight: bold !important;
+    text-transform: uppercase !important; transition: 0.4s; cursor: pointer;
+}
+input[type=submit]:hover {
+    background: #00ffff !important; color: #000 !important; box-shadow: 0 0 40px #00ffff !important;
+}
+
+/* Logo personalizado (SVG fallback a PNG) */
+.logo {
+    background: url('/custom/logo.svg') center/contain no-repeat !important;
+    height: 200px !important; width: 100% !important; margin: 40px 0 !important;
+}
+
+/* Ocultar branding Apache */
+.app-name, .version-number, .guacamole-credit, .powered-by { display: none !important; }

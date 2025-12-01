@@ -1,0 +1,91 @@
+version: '3'
+
+services:
+  guacd:
+    image: guacamole/guacd
+    container_name: guacamole_guacd
+    restart: always
+    networks:
+      - guacnetwork
+
+  db:
+    image: postgres:13
+    container_name: guacamole_db
+    restart: always
+    environment:
+      POSTGRES_DB: guacdb
+      POSTGRES_USER: guacuser
+      POSTGRES_PASSWORD: guacpass
+    volumes:
+      - ./init:/docker-entrypoint-initdb.d:ro
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - guacnetwork
+
+  guacamole:
+    image: guacamole/guacamole
+    container_name: guacamole_guacamole
+    restart: always
+    ports:
+      - "9080:8080"
+    depends_on:
+      - guacd
+      - db
+#    - tailscale
+    environment:
+      GUACD_HOSTNAME: guacd
+      GUACD_PORT: 4822
+      GUACAMOLE_HOME: /guac-home
+      POSTGRESQL_DATABASE: guacdb
+      POSTGRESQL_HOSTNAME: db
+      POSTGRESQL_PORT: 5432
+      POSTGRESQL_USERNAME: guacuser
+      POSTGRESQL_PASSWORD: guacpass
+# WEBP
+#      CUSTOM_WEBAPP_SRC: /custom
+#      HIDE_APACHE_BANNER: "true"
+
+    volumes:
+      - /root/guacamole/config/guacamole.properties:/etc/guacamole/guacamole.properties
+      - /root/guacamole/config/extensions:/etc/guacamole/extensions
+      - /root/guacamole/config/lib:/etc/guacamole/lib
+      - /root/guacamole/config:/guac-home
+
+      - ./custom/css:/opt/guacamole/webapp/extracted/css:ro
+      - ./custom/images:/opt/guacamole/webapp/extracted/images:ro
+#      - /root/guacamole/extensions:/etc/guacamole/extensions
+#      - /root/guacamole/config:/etc/guacamole
+# tema web
+      - ./custom:/custom:ro
+
+    networks:
+      - guacnetwork
+
+# tailscale:
+# image: tailscale/tailscale
+# container_name: tailscale_guac
+# restart: always
+# cap_add:
+# - NET_ADMIN
+# - NET_RAW
+# privileged: true
+# environment:
+# - TS_AUTHKEY=tskey-auth-kbznnWjUC921CNTRL-WvK9YRedzUR3bAiu1iERURUSPtAyk14WP
+# - TS_TAGS=tag:server
+# - TS_ACCEPT_DNS=false
+# - TS_ACCEPT_ROUTES=true
+# - TS_STATEFUL_FILTERING=false
+# - TS_TUN=userspace-networking
+# volumes:
+# - tailscale_state:/var/lib/tailscale
+# - /dev/net/tun:/dev/net/tun
+# network_mode: host
+
+volumes:
+  postgres_data:
+    name: postgres_data
+#  tailscale_state:
+
+networks:
+  guacnetwork:
+    driver: bridge

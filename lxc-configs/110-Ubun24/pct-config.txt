@@ -1,0 +1,17 @@
+arch: amd64
+cores: 2
+description:  Permitir WireGuard y Tailscale%0Alxc.network.type%3A veth%0Alxc.network.link%3A vmbr1%0Alxc.network.flags%3A up%0A
+features: keyctl=1,nesting=1
+hostname: Ubun24
+memory: 4098
+nameserver: 8.8.8.8 1.1.1.1
+net0: name=eth0,bridge=vmbr1,gw=192.168.100.10,hwaddr=4e:33:a4:fc:42:24,ip=192.168.100.11/24,type=veth
+ostype: ubuntu
+rootfs: lab-storage:110/vm-110-disk-0.raw,size=37G
+swap: 2048
+unprivileged: 0
+lxc.apparmor.profile: unconfined
+lxc.cap.drop: 
+lxc.cgroup2.devices.allow: c 10:200 rwm
+lxc.mount.entry: /dev/net/tun dev/net/tun none bind,create=file
+lxc.mount.auto: proc:rw sys:rw

@@ -13,9 +13,9 @@ services:
     container_name: guacamole_db
     restart: always
     environment:
-      POSTGRES_DB: guacdb
-      POSTGRES_USER: guacuser
-      POSTGRES_PASSWORD: guacpass
+      POSTGRES_DB: databaseguac
+      POSTGRES_USER: users
+      POSTGRES_PASSWORD: password
     volumes:
       - ./init:/docker-entrypoint-initdb.d:ro
       - postgres_data:/var/lib/postgresql/data
@@ -31,7 +31,6 @@ services:
     depends_on:
       - guacd
       - db
-#    - tailscale
     environment:
       GUACD_HOSTNAME: guacd
       GUACD_PORT: 4822
@@ -39,29 +38,25 @@ services:
       POSTGRESQL_DATABASE: guacdb
       POSTGRESQL_HOSTNAME: db
       POSTGRESQL_PORT: 5432
-      POSTGRESQL_USERNAME: guacuser
-      POSTGRESQL_PASSWORD: guacpass
-# WEBP
-#      CUSTOM_WEBAPP_SRC: /custom
-#      HIDE_APACHE_BANNER: "true"
+      POSTGRESQL_USERNAME: usuarioguac
+      POSTGRESQL_PASSWORD: passwordguac
 
     volumes:
       - /root/guacamole/config/guacamole.properties:/etc/guacamole/guacamole.properties
       - /root/guacamole/config/extensions:/etc/guacamole/extensions
       - /root/guacamole/config/lib:/etc/guacamole/lib
       - /root/guacamole/config:/guac-home
-
+      # Pesonalizar guacamole
       - ./custom/css:/opt/guacamole/webapp/extracted/css:ro
       - ./custom/images:/opt/guacamole/webapp/extracted/images:ro
-#      - /root/guacamole/extensions:/etc/guacamole/extensions
-#      - /root/guacamole/config:/etc/guacamole
+
 # tema web
-      - ./custom:/custom:ro
+#      - ./custom:/custom:ro
 
     networks:
       - guacnetwork
 
-# tailscale:
+#    - tailscale
 # image: tailscale/tailscale
 # container_name: tailscale_guac
 # restart: always
@@ -70,7 +65,7 @@ services:
 # - NET_RAW
 # privileged: true
 # environment:
-# - TS_AUTHKEY=tskey-auth-kbznnWjUC921CNTRL-WvK9YRedzUR3bAiu1iERURUSPtAyk14WP
+# - TS_AUTHKEY=tskey-auth-tokensdfnsdfnfd...
 # - TS_TAGS=tag:server
 # - TS_ACCEPT_DNS=false
 # - TS_ACCEPT_ROUTES=true
@@ -85,7 +80,6 @@ volumes:
   postgres_data:
     name: postgres_data
 #  tailscale_state:
-
 networks:
   guacnetwork:
     driver: bridge

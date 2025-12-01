@@ -1,10 +1,10 @@
 # SNEP – HomeLab|CampusLab|BusinessLab Proxmox (by JohanSE17)
 Configuraciones y scripts para homelab, campuslab y businesslabs basado en Proxmox/guac: instalación, LXC/VMs, automatización con Ansible. Reproducible y modular.
 
-![Proxmox](https://img.shields.io/badge/Proxmox-8.2+-E57000?logo=proxmox&logoColor=white)
-![LXC](https://img.shields.io/badge/LXC-Containers-00D0D0)
-![Docker](https://img.shields.io/badge/Docker-20+-2496ED?logo=docker)
-![Tailscale](https://img.shields.io/badge/Tailscale-Remote_Access-00C2FF)
+[![Proxmox](https://img.shields.io/badge/Proxmox-8.2+-E57000?logo=proxmox&logoColor=white)](https://www.proxmox.com/en/)
+[![LXC](https://img.shields.io/badge/LXC-Containers-00D0D0)](https://pve.proxmox.com/wiki/Linux_Container)
+[![Docker](https://img.shields.io/badge/Docker-20+-2496ED?logo=docker)](https://hub.docker.com/search?q=guacamole)
+[![Tailscale](https://img.shields.io/badge/Tailscale-Remote_Access-00C2FF)](https://login.tailscale.com/start)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 **S**elf-hosted **N**etwork **E**nterprise **P**latform – Mi homelab 100 % reproducible basado en Proxmox VE (kernel 6.8.12-16-pve) con más de 15 contenedores LXC + Docker, acceso remoto seguro y laboratorio de pentesting.

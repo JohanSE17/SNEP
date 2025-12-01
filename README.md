@@ -27,13 +27,12 @@ Todo el setup se puede levantar desde cero en otro nodo Proxmox con un solo `git
 
 ## Diagrama de red (texto)
 Internet
-
-↓ (DuckDNS + Cloudflare Tunnel opcional)
-
+↓ 
+(DuckDNS + Cloudflare Tunnel opcional)
 Tailscale (100.x.x.x) ←→ twgsej (LXC 121)
 ↓
-
 Proxmox Host (192.168.100.10)
+
 ├─ LXC 110-121
 ├─ Docker → Guacamole stack (9080) + DVWA (9001)
 └─ VMs (Windows, Kali, etc.)
@@ -53,7 +52,7 @@ nano .env   # ← aquí pones tu DuckDNS token, IPs, etc.
 # 4. (Próximamente) Levanta todo con Ansible
 ansible-playbook -i inventory/hosts.yml ansible/playbook-main.yml
 ```
-##Licencia
+## Licencia
 MIT License – Usa, modifica y distribuye libremente, dando crédito a mi como creador y a los compas que hicieron posible todo.
 Solo mantén el aviso de copyright si redistribuyes.
-#Hecho con ❤️ (y mucho café) desde Colombia por JohanSE17
+# Hecho con ❤️ (y mucho café) desde Colombia por JohanSE17
